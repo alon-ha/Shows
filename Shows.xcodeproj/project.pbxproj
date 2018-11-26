@@ -17,7 +17,7 @@
 		DF36A93E21AC225000468AC3 /* FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A93D21AC225000468AC3 /* FontBook.swift */; };
 		DF36A94021AC225100468AC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF36A93F21AC225100468AC3 /* Assets.xcassets */; };
 		DF36A94421AC225100468AC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF36A94221AC225100468AC3 /* LaunchScreen.storyboard */; };
-		DF36A94F21AC238000468AC3 /* ShowsInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A94E21AC238000468AC3 /* ShowsInfoVC.swift */; };
+		DF36A94F21AC238000468AC3 /* ShowInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A94E21AC238000468AC3 /* ShowInfoVC.swift */; };
 		DF36A95121AC23A600468AC3 /* ShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A95021AC23A600468AC3 /* ShowsViewModel.swift */; };
 		DF36A95321AC23CB00468AC3 /* ShowsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A95221AC23CB00468AC3 /* ShowsNetwork.swift */; };
 		DF36A95621AC23E300468AC3 /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A95521AC23E300468AC3 /* ShowCell.swift */; };
@@ -33,6 +33,10 @@
 		DF36A96E21AC35AC00468AC3 /* RxSwift+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A96D21AC35AC00468AC3 /* RxSwift+Helpers.swift */; };
 		DF36A97021AC366700468AC3 /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A96F21AC366700468AC3 /* ShowImage.swift */; };
 		DF36A97221AC375C00468AC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF36A97121AC375C00468AC3 /* Localizable.strings */; };
+		DF36A97421AC3BBA00468AC3 /* TableView+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A97321AC3BBA00468AC3 /* TableView+Registration.swift */; };
+		DF36A97821AC3E0A00468AC3 /* ShowInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A97721AC3E0A00468AC3 /* ShowInfoViewModel.swift */; };
+		DF36A97A21AC405900468AC3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A97921AC405900468AC3 /* Router.swift */; };
+		DF36A97C21AC40AB00468AC3 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A97B21AC40AB00468AC3 /* Presentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +54,7 @@
 		DF36A94121AC225100468AC3 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		DF36A94321AC225100468AC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF36A94521AC225100468AC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF36A94E21AC238000468AC3 /* ShowsInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsInfoVC.swift; sourceTree = "<group>"; };
+		DF36A94E21AC238000468AC3 /* ShowInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoVC.swift; sourceTree = "<group>"; };
 		DF36A95021AC23A600468AC3 /* ShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsViewModel.swift; sourceTree = "<group>"; };
 		DF36A95221AC23CB00468AC3 /* ShowsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsNetwork.swift; sourceTree = "<group>"; };
 		DF36A95521AC23E300468AC3 /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
@@ -66,6 +70,10 @@
 		DF36A96D21AC35AC00468AC3 /* RxSwift+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+Helpers.swift"; sourceTree = "<group>"; };
 		DF36A96F21AC366700468AC3 /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
 		DF36A97121AC375C00468AC3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DF36A97321AC3BBA00468AC3 /* TableView+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Registration.swift"; sourceTree = "<group>"; };
+		DF36A97721AC3E0A00468AC3 /* ShowInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoViewModel.swift; sourceTree = "<group>"; };
+		DF36A97921AC405900468AC3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DF36A97B21AC40AB00468AC3 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		F492DF705262C30B25081EE4 /* Pods_Shows.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shows.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				DF36A93321AC225000468AC3 /* Reusable+IndentifierName.swift */,
+				DF36A97321AC3BBA00468AC3 /* TableView+Registration.swift */,
 				DF36A93521AC225000468AC3 /* EasyViews.swift */,
 				DF36A96D21AC35AC00468AC3 /* RxSwift+Helpers.swift */,
 			);
@@ -184,7 +193,8 @@
 		DF36A94D21AC232100468AC3 /* ShowInfo */ = {
 			isa = PBXGroup;
 			children = (
-				DF36A94E21AC238000468AC3 /* ShowsInfoVC.swift */,
+				DF36A97621AC3DF800468AC3 /* ViewModels */,
+				DF36A97521AC3DEE00468AC3 /* Views */,
 			);
 			name = ShowInfo;
 			sourceTree = "<group>";
@@ -218,6 +228,8 @@
 		DF36A95921AC24C000468AC3 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				DF36A97921AC405900468AC3 /* Router.swift */,
+				DF36A97B21AC40AB00468AC3 /* Presentable.swift */,
 				DF36A95A21AC24E100468AC3 /* BaseCoordinator.swift */,
 				DF36A95B21AC24E100468AC3 /* DeepLinkOptions.swift */,
 				DF36A96421AC26B100468AC3 /* AppCoordinator.swift */,
@@ -236,6 +248,22 @@
 				DF36A96F21AC366700468AC3 /* ShowImage.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DF36A97521AC3DEE00468AC3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A94E21AC238000468AC3 /* ShowInfoVC.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DF36A97621AC3DF800468AC3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A97721AC3E0A00468AC3 /* ShowInfoViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +398,7 @@
 			files = (
 				DF36A93421AC225000468AC3 /* Reusable+IndentifierName.swift in Sources */,
 				DF36A96121AC25A700468AC3 /* ShowInfoCoordinator.swift in Sources */,
+				DF36A97A21AC405900468AC3 /* Router.swift in Sources */,
 				DF36A96521AC26B100468AC3 /* AppCoordinator.swift in Sources */,
 				DF36A96721AC31FA00468AC3 /* ShowCellViewModel.swift in Sources */,
 				DF36A92F21AC225000468AC3 /* AppDelegate.swift in Sources */,
@@ -384,12 +413,15 @@
 				DF36A96C21AC339F00468AC3 /* Rating.swift in Sources */,
 				DF36A93121AC225000468AC3 /* ShowsVC.swift in Sources */,
 				DF36A95C21AC24E100468AC3 /* BaseCoordinator.swift in Sources */,
-				DF36A94F21AC238000468AC3 /* ShowsInfoVC.swift in Sources */,
+				DF36A94F21AC238000468AC3 /* ShowInfoVC.swift in Sources */,
 				DF36A93E21AC225000468AC3 /* FontBook.swift in Sources */,
 				DF36A97021AC366700468AC3 /* ShowImage.swift in Sources */,
 				DF36A96A21AC329200468AC3 /* ShowModel.swift in Sources */,
 				DF36A95621AC23E300468AC3 /* ShowCell.swift in Sources */,
+				DF36A97421AC3BBA00468AC3 /* TableView+Registration.swift in Sources */,
+				DF36A97C21AC40AB00468AC3 /* Presentable.swift in Sources */,
 				DF36A93C21AC225000468AC3 /* ColorPalette.swift in Sources */,
+				DF36A97821AC3E0A00468AC3 /* ShowInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

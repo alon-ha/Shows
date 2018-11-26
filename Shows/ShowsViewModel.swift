@@ -29,7 +29,7 @@ class ShowsViewModel: ShowsViewModeling, ShowsViewModelingInputs, ShowsViewModel
     fileprivate let disposeBag = DisposeBag()
     fileprivate let network: ShowsNetworking
 
-    init (network: ShowsNetworking) {
+    init (network: ShowsNetworking = ShowsNetwork()) {
         self.network = network
         setupObservers()
     }

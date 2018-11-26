@@ -17,6 +17,7 @@ class ShowsVC: UIViewController {
     fileprivate lazy var showsTableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = ShowCell.Metrics.height
+        tableView.register(cellClass: ShowCell.self)
         return tableView
     }()
 
@@ -39,6 +40,8 @@ class ShowsVC: UIViewController {
 
 fileprivate extension ShowsVC {
     func setupViews() {
+        view.backgroundColor = .white
+
         view.addSubview(showsTableView)
         showsTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -47,7 +50,11 @@ fileprivate extension ShowsVC {
 
     func setupObservers() {
         viewModel.outputs.showsCellsViewModels
-            .bind
+            .bind(to: showsTableView.rx.items(cellIdentifier: ShowCell.identifierName,
+                                              cellType: ShowCell.self)) { _, viewModel, cell in
+                cell.configure(with: viewModel)
+            }
+            .disposed(by: disposeBag)
     }
 }
 
