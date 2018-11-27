@@ -16,6 +16,7 @@ protocol ShowCellViewModelingOutputs {
     var name: String { get }
     var imageURL: URL { get }
     var rating: String { get }
+    var showModel: ShowModel { get }
 }
 
 protocol ShowCellViewModeling {
@@ -27,7 +28,7 @@ class ShowCellViewModel: ShowCellViewModeling, ShowCellViewModelingInputs, ShowC
     var inputs: ShowCellViewModelingInputs { return self }
     var outputs: ShowCellViewModelingOutputs { return self }
 
-    fileprivate let showModel: ShowModel
+    let showModel: ShowModel
 
     init(showModel: ShowModel) {
         self.showModel = showModel

@@ -12,7 +12,7 @@ import RxSwift
 class AppCoordinator: BaseCoordinator<Void> {
 
     fileprivate let window: UIWindow
-
+    fileprivate var router: Routering!
     init(window: UIWindow) {
         self.window = window
     }
@@ -20,12 +20,12 @@ class AppCoordinator: BaseCoordinator<Void> {
     override func start(deepLinkOptions: DeepLinkOptions? = nil) -> Observable<Void> {
         // We colud have done some initial logic for example when the app start
 
-        let showsCoordinator = ShowsCoordinator()
+        let navigation = UINavigationController()
+        window.rootViewController = navigation
+        router = Router(navigationController: navigation)
+
+        let showsCoordinator = ShowsCoordinator(router: router)
 
         return coordinate(to: showsCoordinator)
-            .flatMap { _ -> Observable<Void> in
-                // We return never because the app should never end
-                return .never()
-            }
     }
 }

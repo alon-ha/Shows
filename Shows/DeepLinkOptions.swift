@@ -9,5 +9,5 @@
 import Foundation
 
 enum DeepLinkOptions {
-    case settings
+    case about
 }

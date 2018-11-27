@@ -24,5 +24,10 @@ protocol ShowInfoViewModeling {
 class ShowInfoViewModel: ShowInfoViewModeling, ShowInfoViewModelingInputs, ShowInfoViewModelingOutputs {
     var inputs: ShowInfoViewModelingInputs { return self }
     var outputs: ShowInfoViewModelingOutputs { return self }
-    
+
+    fileprivate let showModel: ShowModel
+
+    init(showModel: ShowModel) {
+        self.showModel = showModel
+    }
 }

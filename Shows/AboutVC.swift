@@ -1,18 +1,18 @@
 //
-//  ShowInfoVC.swift
+//  AboutVC.swift
 //  Shows
 //
-//  Created by Alon Haiut on 26/11/2018.
+//  Created by Alon Haiut on 27/11/2018.
 //  Copyright © 2018 Alon Haiut. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-class ShowInfoVC: UIViewController {
-    fileprivate let viewModel: ShowInfoViewModeling
+class AboutVC: UIViewController {
+    fileprivate let viewModel: AboutViewModeling
 
-    init(viewModel: ShowInfoViewModeling) {
+    init(viewModel: AboutViewModeling = AboutViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,11 +27,8 @@ class ShowInfoVC: UIViewController {
     }
 }
 
-fileprivate extension ShowInfoVC {
+fileprivate extension AboutVC {
     func setupViews() {
 
     }
 }
-
-
-

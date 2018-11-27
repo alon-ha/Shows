@@ -11,10 +11,14 @@ import RxSwift
 
 protocol ShowsViewModelingInputs {
     var loadShows: PublishSubject<Void> { get }
+    var tapInfo: PublishSubject<Void> { get }
+    var tapCellViewModel: PublishSubject<ShowCellViewModeling> { get }
 }
 
 protocol ShowsViewModelingOutputs {
     var showsCellsViewModels: Observable<[ShowCellViewModeling]> { get }
+    var showMoreDetails: Observable<ShowModel> { get }
+    var openAbout: Observable<Void> { get }
 }
 
 protocol ShowsViewModeling {
@@ -41,6 +45,18 @@ class ShowsViewModel: ShowsViewModeling, ShowsViewModelingInputs, ShowsViewModel
         return _showsCellsViewModels
             .asObservable()
             .unwrap()
+    }
+
+    var tapInfo = PublishSubject<Void>()
+    var openAbout: Observable<Void> {
+        return tapInfo.asObservable()
+    }
+
+    var tapCellViewModel = PublishSubject<ShowCellViewModeling>()
+    var showMoreDetails: Observable<ShowModel> {
+        return tapCellViewModel
+            .map { $0.outputs.showModel }
+            .asObservable()
     }
 }
 
