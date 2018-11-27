@@ -18,8 +18,14 @@ class ShowsVC: UIViewController {
         let tableView = UITableView()
         tableView.rowHeight = ShowCell.Metrics.height
         tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
         tableView.register(cellClass: ShowCell.self)
         return tableView
+    }()
+
+    fileprivate lazy var btnItemAbout: UIBarButtonItem = {
+        let infoImage = UIImage(named: "info")
+        return UIBarButtonItem(image: infoImage, style: .plain, target: nil, action: nil)
     }()
 
     init(viewModel: ShowsViewModeling = ShowsViewModel()) {
@@ -47,14 +53,23 @@ fileprivate extension ShowsVC {
         showsTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+
+        navigationItem.rightBarButtonItem = btnItemAbout
     }
 
     func setupObservers() {
+        title = viewModel.outputs.title
+        
         viewModel.outputs.showsCellsViewModels
             .bind(to: showsTableView.rx.items(cellIdentifier: ShowCell.identifierName,
                                               cellType: ShowCell.self)) { _, viewModel, cell in
                 cell.configure(with: viewModel)
             }
+            .disposed(by: disposeBag)
+
+        btnItemAbout.rx.tap
+            .asObservable()
+            .bind(to: viewModel.inputs.tapInfo)
             .disposed(by: disposeBag)
     }
 }

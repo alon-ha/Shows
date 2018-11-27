@@ -46,6 +46,6 @@ class ShowCellViewModel: ShowCellViewModeling, ShowCellViewModelingInputs, ShowC
         guard let rate = showModel.rating.rate else {
             return NSLocalizedString("RatingUnavailable", comment:"")
         }
-        return "\(NSLocalizedString("Rating", comment:"")): \(rate))"
+        return "\(NSLocalizedString("Rating", comment:"")): \(rate)"
     }()
 }

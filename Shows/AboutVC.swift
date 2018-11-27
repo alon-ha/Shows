@@ -25,7 +25,7 @@ class AboutVC: UIViewController {
     fileprivate var lblAllRights: UILabel = {
         return UILabel()
             .font(FontBook.helperMedium)
-            .textColor(ColorPalette.basicGrey)
+            .textColor(ColorPalette.darkGrey)
             .textAlignment(.center)
     }()
 
@@ -47,6 +47,8 @@ class AboutVC: UIViewController {
 
 fileprivate extension AboutVC {
     func setupViews() {
+        view.backgroundColor = .white
+
         view.addSubview(lblAllRights)
         lblAllRights.snp.makeConstraints { make in
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(Metrics.padding)
@@ -59,11 +61,12 @@ fileprivate extension AboutVC {
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(Metrics.padding)
             make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-Metrics.padding)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(Metrics.padding)
-            make.bottom.lessThanOrEqualTo(lblAllRights.snp.top).offset(-Metrics.padding)
+            make.bottom.equalTo(lblAllRights.snp.top).offset(-Metrics.padding)
         }
     }
 
     func configureViews() {
+        title = viewModel.outputs.title
         lblAllRights.text = viewModel.outputs.allRightsText
         txtViewAbout.attributedText = viewModel.outputs.aboutText
     }

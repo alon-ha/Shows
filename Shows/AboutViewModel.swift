@@ -16,6 +16,7 @@ protocol AboutViewModelingInputs {
 protocol AboutViewModelingOutputs {
     var allRightsText: String { get }
     var aboutText: NSAttributedString { get }
+    var title: String { get }
 }
 
 protocol AboutViewModeling {
@@ -41,11 +42,14 @@ class AboutViewModel: AboutViewModeling, AboutViewModelingInputs, AboutViewModel
 
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: FontBook.secondaryHeadingMedium,
-            NSAttributedString.Key.foregroundColor: ColorPalette.blackish,
+            NSAttributedString.Key.foregroundColor: ColorPalette.darkGrey,
             NSAttributedString.Key.paragraphStyle: style
         ]
         
         return NSAttributedString(string: text, attributes: attributes)
     }()
-    
+
+    lazy var title: String = {
+        return NSLocalizedString("About", comment:"")
+    }()
 }

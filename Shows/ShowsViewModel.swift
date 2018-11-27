@@ -19,6 +19,7 @@ protocol ShowsViewModelingOutputs {
     var showsCellsViewModels: Observable<[ShowCellViewModeling]> { get }
     var showMoreDetails: Observable<ShowModel> { get }
     var openAbout: Observable<Void> { get }
+    var title: String { get }
 }
 
 protocol ShowsViewModeling {
@@ -58,6 +59,10 @@ class ShowsViewModel: ShowsViewModeling, ShowsViewModelingInputs, ShowsViewModel
             .map { $0.outputs.showModel }
             .asObservable()
     }
+
+    lazy var title: String = {
+        return NSLocalizedString("BestShows", comment:"")
+    }()
 }
 
 fileprivate extension ShowsViewModel {

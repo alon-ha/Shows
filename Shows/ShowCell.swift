@@ -13,26 +13,26 @@ import Kingfisher
 
 class ShowCell: UITableViewCell {
     struct Metrics {
-        static let height: CGFloat = 60 + (2 * mainAreaInset)
-        static let imageSize: CGFloat = 40
-        static let imageRadius: CGFloat = 8
+        static let height: CGFloat = 100 + (2 * mainAreaInset)
+        static let imageSize: CGFloat = 80
+        static let imageRadius: CGFloat = 12
         static let horizontalPadding: CGFloat = 12
-        static let verticalPadding: CGFloat = 6
+        static let verticalPadding: CGFloat = 16
         static let mainAreaInset: CGFloat = 12
-        static let mainAreaRadius: CGFloat = 8
+        static let mainAreaRadius: CGFloat = 12
     }
 
     fileprivate lazy var mainArea: UIView = {
         let view = UIView()
             .corner(radius: Metrics.mainAreaRadius)
-            .backgroundColor(ColorPalette.lightGrey)
+            .backgroundColor(ColorPalette.midGrey)
         view.apply(shadow: .medium)
         return view
     }()
 
     fileprivate lazy var imgViewShow: UIImageView = {
         let imgView = UIImageView()
-            .contentMode(.scaleAspectFit)
+            .contentMode(.scaleAspectFill)
             .corner(radius: Metrics.imageRadius)
         return imgView
     }()
@@ -71,6 +71,8 @@ class ShowCell: UITableViewCell {
 
 fileprivate extension ShowCell {
     func setupViews() {
+        selectionStyle = .none
+        
         contentView.addSubview(mainArea)
         mainArea.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(Metrics.mainAreaInset)
