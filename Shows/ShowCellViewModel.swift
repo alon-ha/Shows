@@ -43,6 +43,9 @@ class ShowCellViewModel: ShowCellViewModeling, ShowCellViewModelingInputs, ShowC
     }()
 
     lazy var rating: String = {
-        return "\(NSLocalizedString("Rating", comment:"")): \(showModel.rating.rate))"
+        guard let rate = showModel.rating.rate else {
+            return NSLocalizedString("RatingUnavailable", comment:"")
+        }
+        return "\(NSLocalizedString("Rating", comment:"")): \(rate))"
     }()
 }

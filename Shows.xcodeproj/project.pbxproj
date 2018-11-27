@@ -39,6 +39,18 @@
 		DF36A97E21AD1D9C00468AC3 /* AboutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A97D21AD1D9C00468AC3 /* AboutCoordinator.swift */; };
 		DF36A98321AD236A00468AC3 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A98221AD236A00468AC3 /* AboutViewModel.swift */; };
 		DF36A98521AD237900468AC3 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A98421AD237900468AC3 /* AboutVC.swift */; };
+		DF36A98F21AD430F00468AC3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A98E21AD430F00468AC3 /* Environment.swift */; };
+		DF36A99121AD4D8300468AC3 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A99021AD4D8300468AC3 /* NetworkAPI.swift */; };
+		DF36A99421AD4E4900468AC3 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A99321AD4E4900468AC3 /* HTTPHeaderField.swift */; };
+		DF36A99621AD4E6C00468AC3 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A99521AD4E6C00468AC3 /* Middleware.swift */; };
+		DF36A99921AD4E9000468AC3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A99821AD4E9000468AC3 /* Logger.swift */; };
+		DF36A99C21AD4EC300468AC3 /* RequestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A99B21AD4EC300468AC3 /* RequestLogger.swift */; };
+		DF36A99F21AD4F0C00468AC3 /* DLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A99E21AD4F0C00468AC3 /* DLog.swift */; };
+		DF36A9A121AD4F3100468AC3 /* ResponseLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A9A021AD4F3100468AC3 /* ResponseLogger.swift */; };
+		DF36A9A421AD4FA000468AC3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A9A321AD4FA000468AC3 /* Endpoint.swift */; };
+		DF36A9A721AD4FE000468AC3 /* URLRequestConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A9A621AD4FE000468AC3 /* URLRequestConfigure.swift */; };
+		DF36A9A921AD50D800468AC3 /* ShowsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A9A821AD50D800468AC3 /* ShowsEndpoint.swift */; };
+		DF36A9AB21AD55E900468AC3 /* Array+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36A9AA21AD55E900468AC3 /* Array+Unwrap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +65,7 @@
 		DF36A93B21AC225000468AC3 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		DF36A93D21AC225000468AC3 /* FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontBook.swift; sourceTree = "<group>"; };
 		DF36A93F21AC225100468AC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DF36A94121AC225100468AC3 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		DF36A94121AC225100468AC3 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DF36A94321AC225100468AC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF36A94521AC225100468AC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF36A94E21AC238000468AC3 /* ShowInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoVC.swift; sourceTree = "<group>"; };
@@ -78,6 +90,18 @@
 		DF36A97D21AD1D9C00468AC3 /* AboutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCoordinator.swift; sourceTree = "<group>"; };
 		DF36A98221AD236A00468AC3 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		DF36A98421AD237900468AC3 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		DF36A98E21AD430F00468AC3 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DF36A99021AD4D8300468AC3 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		DF36A99321AD4E4900468AC3 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		DF36A99521AD4E6C00468AC3 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		DF36A99821AD4E9000468AC3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		DF36A99B21AD4EC300468AC3 /* RequestLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLogger.swift; sourceTree = "<group>"; };
+		DF36A99E21AD4F0C00468AC3 /* DLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLog.swift; sourceTree = "<group>"; };
+		DF36A9A021AD4F3100468AC3 /* ResponseLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLogger.swift; sourceTree = "<group>"; };
+		DF36A9A321AD4FA000468AC3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		DF36A9A621AD4FE000468AC3 /* URLRequestConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConfigure.swift; sourceTree = "<group>"; };
+		DF36A9A821AD50D800468AC3 /* ShowsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsEndpoint.swift; sourceTree = "<group>"; };
+		DF36A9AA21AD55E900468AC3 /* Array+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Unwrap.swift"; sourceTree = "<group>"; };
 		F492DF705262C30B25081EE4 /* Pods_Shows.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shows.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +161,7 @@
 				DF36A98621AD25D800468AC3 /* Network */,
 				DF36A93221AC225000468AC3 /* Extensions */,
 				DF36A93721AC225000468AC3 /* Protocols */,
+				DF36A99D21AD4EFC00468AC3 /* Helpers */,
 				DF36A93A21AC225000468AC3 /* Style */,
 				DF36A93F21AC225100468AC3 /* Assets.xcassets */,
 				DF36A94121AC225100468AC3 /* Podfile */,
@@ -154,6 +179,7 @@
 				DF36A97321AC3BBA00468AC3 /* TableView+Registration.swift */,
 				DF36A93521AC225000468AC3 /* EasyViews.swift */,
 				DF36A96D21AC35AC00468AC3 /* RxSwift+Helpers.swift */,
+				DF36A9AA21AD55E900468AC3 /* Array+Unwrap.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -190,7 +216,6 @@
 			children = (
 				DF36A95821AC240E00468AC3 /* API */,
 				DF36A95721AC23EB00468AC3 /* ViewModels */,
-				DF36A96821AC325B00468AC3 /* Models */,
 				DF36A95421AC23D200468AC3 /* Views */,
 			);
 			name = Shows;
@@ -246,16 +271,6 @@
 			name = Coordinators;
 			sourceTree = "<group>";
 		};
-		DF36A96821AC325B00468AC3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DF36A96921AC329200468AC3 /* ShowModel.swift */,
-				DF36A96B21AC339F00468AC3 /* Rating.swift */,
-				DF36A96F21AC366700468AC3 /* ShowImage.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		DF36A97521AC3DEE00468AC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,8 +315,85 @@
 		DF36A98621AD25D800468AC3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DF36A98721AD415300468AC3 /* Codable */,
+				DF36A98D21AD42F900468AC3 /* Environment */,
+				DF36A9A521AD4FCB00468AC3 /* URLRequestConfigure */,
+				DF36A9A221AD4F9800468AC3 /* Endpoints */,
+				DF36A99221AD4E3200468AC3 /* Middleware */,
+				DF36A99021AD4D8300468AC3 /* NetworkAPI.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		DF36A98721AD415300468AC3 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A98A21AD418600468AC3 /* Models+Codable */,
+			);
+			name = Codable;
+			sourceTree = "<group>";
+		};
+		DF36A98A21AD418600468AC3 /* Models+Codable */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A96921AC329200468AC3 /* ShowModel.swift */,
+				DF36A96B21AC339F00468AC3 /* Rating.swift */,
+				DF36A96F21AC366700468AC3 /* ShowImage.swift */,
+			);
+			name = "Models+Codable";
+			sourceTree = "<group>";
+		};
+		DF36A98D21AD42F900468AC3 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A98E21AD430F00468AC3 /* Environment.swift */,
+			);
+			name = Environment;
+			sourceTree = "<group>";
+		};
+		DF36A99221AD4E3200468AC3 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A99721AD4E7B00468AC3 /* Loggers */,
+				DF36A99321AD4E4900468AC3 /* HTTPHeaderField.swift */,
+				DF36A99521AD4E6C00468AC3 /* Middleware.swift */,
+			);
+			name = Middleware;
+			sourceTree = "<group>";
+		};
+		DF36A99721AD4E7B00468AC3 /* Loggers */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A99821AD4E9000468AC3 /* Logger.swift */,
+				DF36A99B21AD4EC300468AC3 /* RequestLogger.swift */,
+				DF36A9A021AD4F3100468AC3 /* ResponseLogger.swift */,
+			);
+			name = Loggers;
+			sourceTree = "<group>";
+		};
+		DF36A99D21AD4EFC00468AC3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A99E21AD4F0C00468AC3 /* DLog.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		DF36A9A221AD4F9800468AC3 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A9A321AD4FA000468AC3 /* Endpoint.swift */,
+				DF36A9A821AD50D800468AC3 /* ShowsEndpoint.swift */,
+			);
+			name = Endpoints;
+			sourceTree = "<group>";
+		};
+		DF36A9A521AD4FCB00468AC3 /* URLRequestConfigure */ = {
+			isa = PBXGroup;
+			children = (
+				DF36A9A621AD4FE000468AC3 /* URLRequestConfigure.swift */,
+			);
+			name = URLRequestConfigure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,17 +527,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF36A98521AD237900468AC3 /* AboutVC.swift in Sources */,
+				DF36A99921AD4E9000468AC3 /* Logger.swift in Sources */,
+				DF36A9A121AD4F3100468AC3 /* ResponseLogger.swift in Sources */,
 				DF36A93421AC225000468AC3 /* Reusable+IndentifierName.swift in Sources */,
+				DF36A99121AD4D8300468AC3 /* NetworkAPI.swift in Sources */,
+				DF36A99421AD4E4900468AC3 /* HTTPHeaderField.swift in Sources */,
+				DF36A98F21AD430F00468AC3 /* Environment.swift in Sources */,
 				DF36A96121AC25A700468AC3 /* ShowInfoCoordinator.swift in Sources */,
 				DF36A97A21AC405900468AC3 /* Router.swift in Sources */,
 				DF36A96521AC26B100468AC3 /* AppCoordinator.swift in Sources */,
 				DF36A96721AC31FA00468AC3 /* ShowCellViewModel.swift in Sources */,
+				DF36A99F21AD4F0C00468AC3 /* DLog.swift in Sources */,
+				DF36A99621AD4E6C00468AC3 /* Middleware.swift in Sources */,
 				DF36A92F21AC225000468AC3 /* AppDelegate.swift in Sources */,
+				DF36A9A721AD4FE000468AC3 /* URLRequestConfigure.swift in Sources */,
 				DF36A95121AC23A600468AC3 /* ShowsViewModel.swift in Sources */,
 				DF36A93621AC225000468AC3 /* EasyViews.swift in Sources */,
 				DF36A97E21AD1D9C00468AC3 /* AboutCoordinator.swift in Sources */,
 				DF36A96E21AC35AC00468AC3 /* RxSwift+Helpers.swift in Sources */,
 				DF36A95D21AC24E100468AC3 /* DeepLinkOptions.swift in Sources */,
+				DF36A9A421AD4FA000468AC3 /* Endpoint.swift in Sources */,
 				DF36A95F21AC251300468AC3 /* ShowsCoordinator.swift in Sources */,
 				DF36A93921AC225000468AC3 /* Shadowable.swift in Sources */,
 				DF36A95321AC23CB00468AC3 /* ShowsNetwork.swift in Sources */,
@@ -454,14 +555,17 @@
 				DF36A95C21AC24E100468AC3 /* BaseCoordinator.swift in Sources */,
 				DF36A94F21AC238000468AC3 /* ShowInfoVC.swift in Sources */,
 				DF36A93E21AC225000468AC3 /* FontBook.swift in Sources */,
+				DF36A99C21AD4EC300468AC3 /* RequestLogger.swift in Sources */,
 				DF36A97021AC366700468AC3 /* ShowImage.swift in Sources */,
 				DF36A96A21AC329200468AC3 /* ShowModel.swift in Sources */,
 				DF36A95621AC23E300468AC3 /* ShowCell.swift in Sources */,
 				DF36A97421AC3BBA00468AC3 /* TableView+Registration.swift in Sources */,
 				DF36A97C21AC40AB00468AC3 /* Presentable.swift in Sources */,
 				DF36A93C21AC225000468AC3 /* ColorPalette.swift in Sources */,
+				DF36A9AB21AD55E900468AC3 /* Array+Unwrap.swift in Sources */,
 				DF36A97821AC3E0A00468AC3 /* ShowInfoViewModel.swift in Sources */,
 				DF36A98321AD236A00468AC3 /* AboutViewModel.swift in Sources */,
+				DF36A9A921AD50D800468AC3 /* ShowsEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = alon.com.Shows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -624,6 +729,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\"";
 				PRODUCT_BUNDLE_IDENTIFIER = alon.com.Shows;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

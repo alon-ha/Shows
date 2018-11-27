@@ -17,6 +17,7 @@ class ShowsVC: UIViewController {
     fileprivate lazy var showsTableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = ShowCell.Metrics.height
+        tableView.tableFooterView = UIView()
         tableView.register(cellClass: ShowCell.self)
         return tableView
     }()

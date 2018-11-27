@@ -9,7 +9,7 @@
 import Foundation
 
 struct Rating: Codable {
-    let rate: Double
+    let rate: Double?
 
     private enum CodingKeys: String, CodingKey {
         case rate = "average"

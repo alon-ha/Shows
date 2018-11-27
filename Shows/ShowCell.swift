@@ -13,16 +13,27 @@ import Kingfisher
 
 class ShowCell: UITableViewCell {
     struct Metrics {
-        static let height: CGFloat = 60
+        static let height: CGFloat = 60 + (2 * mainAreaInset)
         static let imageSize: CGFloat = 40
-        static let horizontalPadding: CGFloat = 16
+        static let imageRadius: CGFloat = 8
+        static let horizontalPadding: CGFloat = 12
         static let verticalPadding: CGFloat = 6
+        static let mainAreaInset: CGFloat = 12
+        static let mainAreaRadius: CGFloat = 8
     }
+
+    fileprivate lazy var mainArea: UIView = {
+        let view = UIView()
+            .corner(radius: Metrics.mainAreaRadius)
+            .backgroundColor(ColorPalette.lightGrey)
+        view.apply(shadow: .medium)
+        return view
+    }()
 
     fileprivate lazy var imgViewShow: UIImageView = {
         let imgView = UIImageView()
             .contentMode(.scaleAspectFit)
-            .corner(radius: Metrics.imageSize / 2)
+            .corner(radius: Metrics.imageRadius)
         return imgView
     }()
 
@@ -60,21 +71,26 @@ class ShowCell: UITableViewCell {
 
 fileprivate extension ShowCell {
     func setupViews() {
-        contentView.addSubview(imgViewShow)
+        contentView.addSubview(mainArea)
+        mainArea.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(Metrics.mainAreaInset)
+        }
+
+        mainArea.addSubview(imgViewShow)
         imgViewShow.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.size.equalTo(Metrics.imageSize)
             make.leading.equalToSuperview().offset(Metrics.horizontalPadding)
         }
 
-        contentView.addSubview(lblName)
+        mainArea.addSubview(lblName)
         lblName.snp.makeConstraints { make in
             make.top.equalTo(imgViewShow)
             make.leading.equalTo(imgViewShow.snp.trailing).offset(Metrics.horizontalPadding)
             make.trailing.lessThanOrEqualToSuperview().offset(-Metrics.horizontalPadding)
         }
 
-        contentView.addSubview(lblRating)
+        mainArea.addSubview(lblRating)
         lblRating.snp.makeConstraints { make in
             make.top.equalTo(lblName.snp.bottom).offset(Metrics.verticalPadding)
             make.leading.equalTo(lblName)
@@ -84,7 +100,7 @@ fileprivate extension ShowCell {
 
     func configureViews() {
         imgViewShow.kf.setImage(with: viewModel.outputs.imageURL,
-                                placeholder: UIImage(named: "placeholder"))
+                                placeholder: UIImage(named: "show_placeholder"))
         lblName.text = viewModel.outputs.name
         lblRating.text = viewModel.outputs.rating
     }

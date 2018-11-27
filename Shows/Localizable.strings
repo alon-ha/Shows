@@ -7,3 +7,6 @@
 */
 
 Rating = "Rating";
+RatingUnavailable = "Rating is unavailable";
+AllRights = "© %@ Alon Haiut All Rights Reserved";
+AboutText = "This app demonstrate the use of MVVM, RxSwift and Coordinators in order to create an app which is easy to maintinable and adding new features.\nIt is shown here how easy it is to manage the flow of the app with coordinators and also add deep link capabilities in the process";
