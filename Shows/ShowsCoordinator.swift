@@ -22,9 +22,10 @@ class ShowsCoordinator: BaseCoordinator<Void> {
         let showsVC = ShowsVC(viewModel: showsVM)
         router.setRoot(showsVC)
 
-        let deepLinkToAbout = PublishSubject<Void>()
+        let deepLinkToAbout = BehaviorSubject<Void?>(value: nil)
 
-        let coordinateAbout = Observable.merge(showsVM.outputs.openAbout, deepLinkToAbout.asObservable())
+        let coordinateAbout = Observable.merge(showsVM.outputs.openAbout,
+                                               deepLinkToAbout.unwrap().asObservable())
             .flatMap { [weak self] _ -> Observable<Void> in
                 guard let self = self else { return .empty() }
                 let aboutCoordinator = AboutCoordinator(router: self.router)
@@ -42,7 +43,7 @@ class ShowsCoordinator: BaseCoordinator<Void> {
         if let deepLink = deepLinkOptions {
             switch deepLink {
             case .about:
-                deepLinkToAbout.onNext()
+                deepLinkToAbout.onNext(())
             }
         }
 

@@ -22,7 +22,7 @@ class AppCoordinator: BaseCoordinator<Void> {
 
         let showsCoordinator = ShowsCoordinator(router: router)
 
-        return coordinate(to: showsCoordinator)
+        return coordinate(to: showsCoordinator, deepLinkOptions: deepLinkOptions)
     }
 }
 
