@@ -17,6 +17,12 @@ class ShowInfoVC: UIViewController {
 
     fileprivate let viewModel: ShowInfoViewModeling
 
+    let mainScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
+    }()
+
     fileprivate lazy var imgViewShow: UIImageView = {
         return UIImageView()
             .contentMode(.scaleAspectFit)
@@ -55,26 +61,38 @@ fileprivate extension ShowInfoVC {
     func setupViews() {
         view.backgroundColor = .white
 
-        view.addSubview(imgViewShow)
-        imgViewShow.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(Metrics.padding)
-            make.trailing.equalToSuperview().offset(-Metrics.padding)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(Metrics.padding)
+        view.addSubview(mainScrollView)
+        mainScrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
 
-        view.addSubview(lblRating)
+        let scrollViewInsideLayout = mainScrollView.contentLayoutGuide
+
+        scrollViewInsideLayout.snp.makeConstraints { make in
+            make.width.equalTo(mainScrollView.snp.width)
+        }
+
+        mainScrollView.addSubview(imgViewShow)
+        imgViewShow.snp.makeConstraints { make in
+            make.leading.equalTo(scrollViewInsideLayout).offset(Metrics.padding)
+            make.trailing.equalTo(scrollViewInsideLayout).offset(-Metrics.padding)
+            make.centerX.equalTo(scrollViewInsideLayout)
+            make.top.equalTo(scrollViewInsideLayout).offset(Metrics.padding)
+        }
+
+        mainScrollView.addSubview(lblRating)
         lblRating.snp.makeConstraints { make in
             make.top.equalTo(imgViewShow.snp.bottom).offset(Metrics.padding)
-            make.leading.equalToSuperview().offset(Metrics.padding)
-            make.trailing.lessThanOrEqualToSuperview().offset(-Metrics.padding)
+            make.leading.equalTo(scrollViewInsideLayout).offset(Metrics.padding)
+            make.trailing.lessThanOrEqualTo(scrollViewInsideLayout).offset(-Metrics.padding)
         }
 
-        view.addSubview(lblGenres)
+        mainScrollView.addSubview(lblGenres)
         lblGenres.snp.makeConstraints { make in
             make.top.equalTo(lblRating.snp.bottom).offset(Metrics.padding)
-            make.leading.equalToSuperview().offset(Metrics.padding)
-            make.trailing.lessThanOrEqualToSuperview().offset(-Metrics.padding)
+            make.leading.equalTo(scrollViewInsideLayout).offset(Metrics.padding)
+            make.trailing.lessThanOrEqualTo(scrollViewInsideLayout).offset(-Metrics.padding)
+            make.bottom.lessThanOrEqualTo(scrollViewInsideLayout).offset(-Metrics.padding)
         }
     }
 
