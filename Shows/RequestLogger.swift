@@ -10,7 +10,9 @@ import Foundation
 
 class RequestLogger: Logging, RequestMiddleware {
     func process(request: URLRequest) -> URLRequest {
-        log(output: "Network request: \(request.debugDescription)")
+        if let url = request.url{
+            log(output: "Network send request: \(url)")
+        }
         return request
     }
 

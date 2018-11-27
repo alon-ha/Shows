@@ -13,6 +13,8 @@ class ResponseLogger: Logging, ResponseMiddleware {
     func process<T: Any>(response: DataResponse<T>) -> DataResponse<T> {
         if let error = response.error {
             log(output: "Network error: \(error.localizedDescription)")
+        } else if let url = response.request?.url{
+            log(output: "Network received request: \(url)")
         }
 
         return response
