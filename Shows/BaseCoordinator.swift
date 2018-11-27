@@ -43,8 +43,10 @@ class BaseCoordinator<ResultType> {
                        deepLinkOptions: DeepLinkOptions? = nil) -> Observable<T> {
         store(coordinator: coordinator)
         return coordinator.start(deepLinkOptions: deepLinkOptions)
-            .do(onNext: { [weak self] _ in
-                self?.free(coordinator: coordinator)
+            .do(onNext: { [weak self, weak coordinator] _ in
+                guard let self = self,
+                    let coord = coordinator else { return }
+                self.free(coordinator: coord)
             })
     }
 

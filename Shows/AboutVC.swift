@@ -19,6 +19,7 @@ class AboutVC: UIViewController {
 
     fileprivate var txtViewAbout: UITextView = {
         let textView = UITextView()
+        textView.isEditable = false
         return textView
     }()
 

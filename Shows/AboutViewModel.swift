@@ -31,7 +31,8 @@ class AboutViewModel: AboutViewModeling, AboutViewModelingInputs, AboutViewModel
     lazy var allRightsText: String = {
         let calendar = Calendar.current
         let year = calendar.component(.year, from: Date())
-        return NSLocalizedString("AllRights", value: "\(year)", comment: "")
+        let text = String(format: NSLocalizedString("AllRights",comment: ""), "\(year)")
+        return text
     }()
 
     lazy var aboutText: NSAttributedString = {

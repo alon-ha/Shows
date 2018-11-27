@@ -59,12 +59,16 @@ fileprivate extension ShowsVC {
 
     func setupObservers() {
         title = viewModel.outputs.title
-        
+
         viewModel.outputs.showsCellsViewModels
             .bind(to: showsTableView.rx.items(cellIdentifier: ShowCell.identifierName,
                                               cellType: ShowCell.self)) { _, viewModel, cell in
                 cell.configure(with: viewModel)
             }
+            .disposed(by: disposeBag)
+
+        showsTableView.rx.modelSelected(ShowCellViewModeling.self)
+            .bind(to: viewModel.inputs.tapCellViewModel)
             .disposed(by: disposeBag)
 
         btnItemAbout.rx.tap
