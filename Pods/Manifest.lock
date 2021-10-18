@@ -16,7 +16,7 @@ DEPENDENCIES:
   - SnapKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Kingfisher
     - RxAtomic
     - RxCocoa
@@ -43,4 +43,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e73c69b4b8732612c3acd25a3be3f50e3961e1c8
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1
