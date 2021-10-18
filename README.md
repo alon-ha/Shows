@@ -3,3 +3,10 @@ This app demonstrate the use of MVVM, RxSwift and Coordinators in order to creat
 It is shown here how easy it is to manage the flow of the app with coordinators and also add deep link capabilities in the process.
 
 The emphasis in the app is on architecture rather than on UI.
+
+<br/><br/>
+
+<p align="middle">
+  <img src="Screenshots/screenshot_1.png" width="390" height="844" align="left">
+  <img src="Screenshots/screenshot_2.png" width="390" height="844" align="right">
+</p>
