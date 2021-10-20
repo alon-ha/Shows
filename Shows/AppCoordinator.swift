@@ -33,9 +33,14 @@ fileprivate extension AppCoordinator {
 
         let navigation = UINavigationController()
         let navBar = navigation.navigationBar
-        navBar.isTranslucent = false
         navBar.tintColor = ColorPalette.blackish
-        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ColorPalette.blackish]
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.foregroundColor: ColorPalette.blackish]
+        appearance.largeTitleTextAttributes = [.foregroundColor: ColorPalette.blackish]
+        navBar.standardAppearance = appearance
+   
         window.rootViewController = navigation
         window.makeKeyAndVisible()
         router = Router(navigationController: navigation)

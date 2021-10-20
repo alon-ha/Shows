@@ -48,7 +48,6 @@ class ShowsVC: UIViewController {
 fileprivate extension ShowsVC {
     func setupViews() {
         view.backgroundColor = .white
-        setupNavBarAppearance()
 
         view.addSubview(showsTableView)
         showsTableView.snp.makeConstraints { make in
@@ -76,16 +75,6 @@ fileprivate extension ShowsVC {
             .asObservable()
             .bind(to: viewModel.inputs.tapInfo)
             .disposed(by: disposeBag)
-    }
-    
-    func setupNavBarAppearance() {
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.titleTextAttributes = [.foregroundColor: ColorPalette.blackish]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: ColorPalette.blackish]
-        navBarAppearance.backgroundColor = .white
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
 }
 
