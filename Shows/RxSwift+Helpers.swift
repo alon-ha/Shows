@@ -15,14 +15,14 @@ extension ObservableType {
         return self.map { _ in }
     }
 
-    func unwrap<T>() -> Observable<T> where E == T? {
+    func unwrap<T>() -> Observable<T> where Element == T? {
         return self
             .filter { $0 != nil }
             .map { $0! }
     }
 }
 
-extension ObserverType where E == Void {
+extension ObserverType where Element == Void {
     func onNext() {
         self.onNext(())
     }
