@@ -4,6 +4,13 @@ It is shown here how easy it is to manage the flow of the app with coordinators 
 
 The emphasis in the app is on architecture rather than on UI.
 
+To run the project you need to have [cocoapods](https://cocoapods.org/) installed.
+<br/>Simply run:
+```
+pod install
+```
+
+
 <br/><br/>
 
 <p align="middle">
