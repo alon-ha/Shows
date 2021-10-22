@@ -66,6 +66,7 @@ class NetworkAPI: NetworkAPIProtocol {
     @discardableResult
     func performRequest<T: Decodable>(route: URLRequestConfiguration, decoder: JSONDecoder = JSONDecoder()) -> ResponseType<T> {
         let progress = PublishSubject<Progress>()
+        let queue = DispatchQueue(label: "AppNetworkQueue", qos: .userInitiated)
 
         let request = requestAfterPerformingMiddlewares(with: route.urlRequest!)
 
@@ -74,7 +75,7 @@ class NetworkAPI: NetworkAPIProtocol {
                 .downloadProgress(closure: { prog in
                     progress.onNext(prog)
                 })
-                .responseDecodable(of: T.self, queue: .main, dataPreprocessor: DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: decoder, emptyResponseCodes: DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: DecodableResponseSerializer<T>.defaultEmptyRequestMethods, completionHandler: { [weak self] (response: DataResponse<T, AFError>) in
+                .responseDecodable(of: T.self, queue: queue, dataPreprocessor: DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: decoder, emptyResponseCodes: DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: DecodableResponseSerializer<T>.defaultEmptyRequestMethods, completionHandler: { [weak self] (response: DataResponse<T, AFError>) in
                     
                     guard let `self` = self else { return }
                     

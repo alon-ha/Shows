@@ -61,6 +61,7 @@ fileprivate extension ShowsVC {
         title = viewModel.outputs.title
 
         viewModel.outputs.showsCellsViewModels
+            .subscribeOn(MainScheduler.instance)
             .bind(to: showsTableView.rx.items(cellIdentifier: ShowCell.identifierName,
                                               cellType: ShowCell.self)) { _, viewModel, cell in
                 cell.configure(with: viewModel)
