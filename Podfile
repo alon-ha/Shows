@@ -3,7 +3,7 @@ inhibit_all_warnings!
 
 target 'Shows' do
     use_frameworks!
-    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+    pod 'Alamofire'
     pod 'SnapKit'
     pod 'RxSwift'
     pod 'RxCocoa'
