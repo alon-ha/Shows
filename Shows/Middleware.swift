@@ -16,5 +16,5 @@ protocol RequestMiddleware: Middleware {
 }
 
 protocol ResponseMiddleware: Middleware {
-    func process<T: Any>(response: DataResponse<T>) -> DataResponse<T>
+    func process<T: Any>(response: DataResponse<T, AFError>) -> DataResponse<T, AFError>
 }

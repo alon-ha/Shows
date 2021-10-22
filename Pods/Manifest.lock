@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.0.0.beta.1)
+  - Alamofire (5.4.4)
   - Kingfisher (4.10.1)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
@@ -9,7 +9,7 @@ PODS:
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `alamofire5`)
+  - Alamofire
   - Kingfisher
   - RxCocoa
   - RxSwift
@@ -22,25 +22,17 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SnapKit
-
-EXTERNAL SOURCES:
-  Alamofire:
-    :branch: alamofire5
-    :git: https://github.com/Alamofire/Alamofire.git
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 1d12720565c93cc43081378010f6ac4cc1c84683
-    :git: https://github.com/Alamofire/Alamofire.git
+  trunk:
+    - Alamofire
 
 SPEC CHECKSUMS:
-  Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: d839b1cfb713c9f1bb8d0b8b3dd40d6243ddf1c4
+PODFILE CHECKSUM: 3485c949b721a51b9c8fd71cd81df658b11952e6
 
 COCOAPODS: 1.9.1

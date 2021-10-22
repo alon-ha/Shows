@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class ResponseLogger: Logging, ResponseMiddleware {
-    func process<T: Any>(response: DataResponse<T>) -> DataResponse<T> {
+    func process<T: Any>(response: DataResponse<T, AFError>) -> DataResponse<T, AFError> {
         if let error = response.error {
             log(output: "Network error: \(error.localizedDescription)")
         } else if let url = response.request?.url{

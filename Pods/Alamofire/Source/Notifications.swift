@@ -24,26 +24,32 @@
 
 import Foundation
 
-extension Notification.Name {
-    /// Posted when a `Request`'s task is resumed. The notification `object` contains the resumed `Request`.
-    public static let afDidResume = Notification.Name(rawValue: "org.alamofire.notification.name.request.didResume")
+extension Request {
+    /// Posted when a `Request` is resumed. The `Notification` contains the resumed `Request`.
+    public static let didResumeNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didResume")
+    /// Posted when a `Request` is suspended. The `Notification` contains the suspended `Request`.
+    public static let didSuspendNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didSuspend")
+    /// Posted when a `Request` is cancelled. The `Notification` contains the cancelled `Request`.
+    public static let didCancelNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didCancel")
+    /// Posted when a `Request` is finished. The `Notification` contains the completed `Request`.
+    public static let didFinishNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didFinish")
 
-    /// Posted when a `Request`'s task is suspended. The notification `object` contains the suspended `Request`.
-    public static let afDidSuspend = Notification.Name(rawValue: "org.alamofire.notification.name.request.didSuspend")
-
-    /// Posted when a `Request` is cancelled. The notification `object` contains the cancelled `Request`.
-    public static let afDidCancel = Notification.Name(rawValue: "org.alamofire.notification.name.request.didCancel")
-
-    /// Posted when a `Request`'s task is completed. The notification `object` contains the completed `Request`.
-    public static let afDidComplete = Notification.Name(rawValue: "org.alamofire.notification.name.request.didComplete")
+    /// Posted when a `URLSessionTask` is resumed. The `Notification` contains the `Request` associated with the `URLSessionTask`.
+    public static let didResumeTaskNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didResumeTask")
+    /// Posted when a `URLSessionTask` is suspended. The `Notification` contains the `Request` associated with the `URLSessionTask`.
+    public static let didSuspendTaskNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didSuspendTask")
+    /// Posted when a `URLSessionTask` is cancelled. The `Notification` contains the `Request` associated with the `URLSessionTask`.
+    public static let didCancelTaskNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didCancelTask")
+    /// Posted when a `URLSessionTask` is completed. The `Notification` contains the `Request` associated with the `URLSessionTask`.
+    public static let didCompleteTaskNotification = Notification.Name(rawValue: "org.alamofire.notification.name.request.didCompleteTask")
 }
 
 // MARK: -
 
 extension Notification {
-    /// The `Request` contained by `self`'s `userInfo`, `nil` otherwise.
-    public var afRequest: Request? {
-        return userInfo?[String.afRequestKey] as? Request
+    /// The `Request` contained by the instance's `userInfo`, `nil` otherwise.
+    public var request: Request? {
+        userInfo?[String.requestKey] as? Request
     }
 
     /// Convenience initializer for a `Notification` containing a `Request` payload.
@@ -52,7 +58,7 @@ extension Notification {
     ///   - name:    The name of the notification.
     ///   - request: The `Request` payload.
     init(name: Notification.Name, request: Request) {
-        self.init(name: name, object: nil, userInfo: [String.afRequestKey: request])
+        self.init(name: name, object: nil, userInfo: [String.requestKey: request])
     }
 }
 
@@ -69,25 +75,41 @@ extension NotificationCenter {
 }
 
 extension String {
-    /// User info dictionary key representing the `URLSessionTask` associated with the notification.
-    static var afRequestKey: String { return "org.alamofire.notification.key.request" }
+    /// User info dictionary key representing the `Request` associated with the notification.
+    fileprivate static let requestKey = "org.alamofire.notification.key.request"
 }
 
 /// `EventMonitor` that provides Alamofire's notifications.
 public final class AlamofireNotifications: EventMonitor {
-    public func request(_ request: Request, didCompleteTask task: URLSessionTask, with error: Error?) {
-        NotificationCenter.default.postNotification(named: .afDidComplete, with: request)
-    }
-
     public func requestDidResume(_ request: Request) {
-        NotificationCenter.default.postNotification(named: .afDidResume, with: request)
+        NotificationCenter.default.postNotification(named: Request.didResumeNotification, with: request)
     }
 
     public func requestDidSuspend(_ request: Request) {
-        NotificationCenter.default.postNotification(named: .afDidSuspend, with: request)
+        NotificationCenter.default.postNotification(named: Request.didSuspendNotification, with: request)
     }
 
     public func requestDidCancel(_ request: Request) {
-        NotificationCenter.default.postNotification(named: .afDidCancel, with: request)
+        NotificationCenter.default.postNotification(named: Request.didCancelNotification, with: request)
+    }
+
+    public func requestDidFinish(_ request: Request) {
+        NotificationCenter.default.postNotification(named: Request.didFinishNotification, with: request)
+    }
+
+    public func request(_ request: Request, didResumeTask task: URLSessionTask) {
+        NotificationCenter.default.postNotification(named: Request.didResumeTaskNotification, with: request)
+    }
+
+    public func request(_ request: Request, didSuspendTask task: URLSessionTask) {
+        NotificationCenter.default.postNotification(named: Request.didSuspendTaskNotification, with: request)
+    }
+
+    public func request(_ request: Request, didCancelTask task: URLSessionTask) {
+        NotificationCenter.default.postNotification(named: Request.didCancelTaskNotification, with: request)
+    }
+
+    public func request(_ request: Request, didCompleteTask task: URLSessionTask, with error: AFError?) {
+        NotificationCenter.default.postNotification(named: Request.didCompleteTaskNotification, with: request)
     }
 }

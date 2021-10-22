@@ -50,7 +50,7 @@ class NetworkAPI: NetworkAPIProtocol {
         return newRequest
     }
 
-    private func responseAfterPerformingMiddlewares<T: Decodable>(with response: DataResponse<T>) -> DataResponse<T> {
+    private func responseAfterPerformingMiddlewares<T: Decodable>(with response: DataResponse<T, AFError>) -> DataResponse<T, AFError> {
         var newResponse = response
         for middleware in responseMiddlewares {
             newResponse = middleware.process(response: newResponse)
@@ -74,11 +74,12 @@ class NetworkAPI: NetworkAPIProtocol {
                 .downloadProgress(closure: { prog in
                     progress.onNext(prog)
                 })
-                .responseJSONDecodable(decoder: decoder, completionHandler: { [weak self] (response: DataResponse<T>) in
+                .responseDecodable(of: T.self, queue: .main, dataPreprocessor: DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: decoder, emptyResponseCodes: DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: DecodableResponseSerializer<T>.defaultEmptyRequestMethods, completionHandler: { [weak self] (response: DataResponse<T, AFError>) in
+                    
                     guard let `self` = self else { return }
-
+                    
                     let newResponse = self.responseAfterPerformingMiddlewares(with: response)
-
+                    
                     switch newResponse.result {
                     case .success(let value):
                         observer.onNext(value)
